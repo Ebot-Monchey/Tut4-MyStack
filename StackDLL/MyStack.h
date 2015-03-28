@@ -2,21 +2,24 @@
 #define MYSTACK_H
 #include <string>
 
+#define EXPORTED _declspec(dllexport)
+
+EXPORTED typedef struct IntObject {
+	int value;
+	IntObject *link;
+} IntObject;
+
 /*
- * Struct thrown when a stack exception occurs
- */
-typedef struct StackException {
+* Struct thrown when a stack exception occurs
+*/
+EXPORTED typedef struct StackException {
 	std::string error;
 };
 
-class MyStack {
+EXPORTED class MyStack {
 private:
 	int n;			// Number of items on the stack
 	int max;		// Maximum number of items that can be on the stack
-	typedef struct IntObject {
-		int value;
-		IntObject *link;
-	} IntObject;
 	IntObject head;	// The item on thew top of the stack
 
 public:
