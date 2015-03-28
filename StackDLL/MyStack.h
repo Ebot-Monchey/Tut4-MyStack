@@ -4,28 +4,27 @@
 
 #define EXPORTED _declspec(dllexport)
 
-EXPORTED typedef struct IntObject {
-	int value;
-	IntObject *link;
-} IntObject;
-
 /*
 * Struct thrown when a stack exception occurs
 */
 EXPORTED typedef struct StackException {
 	std::string error;
-};
+} StackException;
 
-EXPORTED class MyStack {
+class EXPORTED MyStack {
 private:
 	int n;			// Number of items on the stack
 	int max;		// Maximum number of items that can be on the stack
-	IntObject head;	// The item on thew top of the stack
+	typedef struct IntObject {
+		int value;
+		IntObject *link;
+	} IntObject;
+	IntObject *head;	// The item on the top of the stack
 
 public:
 	MyStack(int max);
 	~MyStack();
-	bool push(int);
+	bool push(int value);
 	int pop();
 	int peek();
 	bool isFull();

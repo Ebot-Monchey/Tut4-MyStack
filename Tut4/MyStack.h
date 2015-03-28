@@ -7,7 +7,7 @@
  */
 typedef struct StackException {
 	std::string error;
-};
+} StackException;
 
 class MyStack {
 private:
@@ -17,12 +17,12 @@ private:
 		int value;
 		IntObject *link;
 	} IntObject;
-	IntObject head;	// The item on thew top of the stack
+	IntObject *head;	// The item on the top of the stack
 
 public:
 	MyStack(int max);
 	~MyStack();
-	bool push(int);
+	bool push(int value);
 	int pop();
 	int peek();
 	bool isFull();

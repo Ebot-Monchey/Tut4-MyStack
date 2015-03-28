@@ -50,7 +50,7 @@ namespace StackUnitTest
 			// Tests whether isFull works
 			MyStack stack(1);
 			stack.push(1);
-			Assert::IsTrue(stack.isFull);
+			Assert::IsTrue(stack.isFull());
 		}
 
 		TEST_METHOD(IsEmptyWorks) {

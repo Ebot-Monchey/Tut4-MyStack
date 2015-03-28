@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClInclude Include="MyStack.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MyStack.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5FCDC047-EE78-49FE-821E-B710894B9846}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
